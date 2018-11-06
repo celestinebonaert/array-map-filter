@@ -41,9 +41,34 @@ En sortie: [
 ]
 
  */
+let Array = [{
+  food:"Bacon",
+  isVegetarian:false
+},
+{
+  food:"Sausage",
+  isVegetarian:false
+},
+{
+  food:"Tofu",
+  isVegetarian:true
+},
+{
+  food:"Chick Pea",
+  isVegetarian:true
+}];
 
 function getFoodCategories(foods) {
+  const getFoodCategories = Array.map (function(foods){
+    if(foods.isVegetarian === true){
+      return foods.food + " is suitable for vegetarians"
+    }else{
+      return foods.food + " is not suitable for vegetarians"
+    }
+  })
+  return getFoodCategories
 }
+getFoodCategories(Array)
 
 
 

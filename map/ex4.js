@@ -13,7 +13,8 @@ il t'est demandé de ramener chaque valeur calculée à trois chiffres
 après la virgule, en utilisant la méthode toFixed des nombres (Google est ton ami).
 
 La fonction devra retourner, pour chaque rayon du tableau d'entrée, un objet ayant cette "forme":
-{
+{ame, rating: movies.rating, label: "certified fresh"})
+    }
   radius: R,
   circumference: C
   surface: S
@@ -50,9 +51,15 @@ Tableau de sortie correspondant (toFixed transforme les nombres en chaînes)
   }
 ]
 */
+let Array = [1,2,7,11];
 
 function getCirclesProperties(radiuses) {
+  const getCirclesProperties = Array.map (function(radiuses){
+    return ({radius:radiuses, circumference:(2*Math.PI*radiuses).toFixed(3), surface: (Math.PI*radiuses*radiuses).toFixed(3) });
+  })
+  return getCirclesProperties
 }
+getCirclesProperties(Array)
 
 
 

@@ -27,9 +27,25 @@ Sortie attendue:
     { name: 'Huawei P20', price: 480 }
   ]
  */
+let array = [
+  { name: 'iPhone X', price: 1159 },
+  { name: 'Xiaomi Mi A2', price: 209 },
+  { name: 'Samsung Galaxy Note 9', price: 992 },
+  { name: 'Huawei P20', price: 480 },
+  { name: 'Huawei P20 Pro', price: 649 }
+];
+
+let max = 500;
 
 function filterOnPrice(products, maxPrice) {
+  const filterOnPrice = array.filter(function(products){
+    if (products.price <= maxPrice){
+      return({name: products.name, price: products.price})
+    }
+  })
+  return filterOnPrice;
 }
+filterOnPrice(array)
 
 // Ne pas modifier l'export
 module.exports = filterOnPrice;

@@ -25,9 +25,24 @@ Sortie attendue:
 ]
 
 */
-
-function filterOffensiveComments(comments, bannedWords) {
-}
-
+const tableau = [
+  "Very useful tutorial, thank you so much!",
+  "React is not a damn framework, it's a LIBRARY",
+  "Why you put bloody kitten pictures in a tech tutorial is beyond me!",
+  "Which one is better, React or Angular?",
+  'There is no "better", it depends on your use case, DAMN YOU'
+  ];
+  const mots = ["bloody", "damn"];
+  
+  function filterOffensiveComments(comments, bannedWords) {
+  const filterOffensiveComments = tableau.filter(function(comments){
+  const maj = bannedWords[0].toUpperCase();
+  if((comments.includes(maj)) === false && (comments.includes(bannedWords[0])) === false && (comments.includes(bannedWords[1])) === false){
+  return comments;
+  }
+  })
+  return filterOffensiveComments
+  }
+  filterOffensiveComments(tableau, mots)
 // Ne pas modifier l'export
 module.exports = filterOffensiveComments;

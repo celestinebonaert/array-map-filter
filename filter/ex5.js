@@ -37,9 +37,22 @@ Exemple d'entrée:
 
 
  */
-
+let array = [
+  'Mad Max: Fury Road',
+  'Interstellar',
+  'Revenge of the Nerds',
+  'Revenge of the Pink Panther',
+  'Star Wars: Episode I - The Phantom Menace',
+  'Star Wars: Episode II - Attack of the Clones',
+  'Star Wars: Episode III - Revenge of the Sith'
+];
+let word = "Revenge";
 function searchWordFilter(items, search) {
+  const searchWordFilter = array.filter(function(items){
+    return items.includes(word);
+  })
+  return searchWordFilter
 }
-
+searchWordFilter(array)
 // Ne pas modifier l'export
 module.exports = searchWordFilter;
